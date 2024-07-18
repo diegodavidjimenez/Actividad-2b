@@ -1,0 +1,12 @@
+<!-- gestion/templates/gestion/form_doctor.html -->
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h2>{{ form.instance.id|yesno:"Editar,Crear" }} Doctor Veterinario</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
+{% endblock %}

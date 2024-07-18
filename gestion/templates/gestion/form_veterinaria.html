@@ -1,0 +1,12 @@
+<!-- gestion/templates/gestion/form_veterinaria.html -->
+
+
+
+{% block content %}
+<h2>{{ form.instance.id|yesno:"Editar,Crear" }} Veterinaria</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
+{% endblock %}

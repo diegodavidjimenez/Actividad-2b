@@ -1,0 +1,13 @@
+<!-- gestion/templates/gestion/listar_doctores.html -->
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h2>Lista de Doctores Veterinarios</h2>
+<ul>
+    {% for doctor in doctores %}
+    <li>{{ doctor.nombre_doctor }} {{ doctor.apellido_doctor }} - <a href="{% url 'editar_doctor' doctor.id %}">Editar</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'crear_doctor' %}">Crear Nuevo Doctor</a>
+{% endblock %}

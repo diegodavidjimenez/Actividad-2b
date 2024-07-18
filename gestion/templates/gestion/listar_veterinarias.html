@@ -1,0 +1,13 @@
+<!-- gestion/templates/gestion/listar_veterinarias.html -->
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h2>Lista de Veterinarias</h2>
+<ul>
+    {% for veterinaria in veterinarias %}
+    <li>{{ veterinaria.nombre }} - <a href="{% url 'editar_veterinaria' veterinaria.id %}">Editar</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'crear_veterinaria' %}">Crear Nueva Veterinaria</a>
+{% endblock %}
